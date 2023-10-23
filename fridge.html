@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refrigerator App</title>
+    <style>
+        body {  background-color: #FFCCF2;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+	
+	.floatRight {
+            float: right; width: 40%; border: 5px solid white; background-color: white;
+       }
+
+	input[type="button"] {
+		margin: 0;
+		padding: 0;
+		vertical-align: top;
+	}
+
+	#searchEngine{
+	display: none;
+	margin-left: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="group1" class= "floatRight">
+
+	<div id="div1">
+
+	<p>
+
+		<img src="https://image.influenster.com/eyJidWNrZXQiOiAiaW5mbHVlbnN0ZXJfcHJvZHVjdGlvbiIsICJrZXkiOiAibWVkaWEvcHJvZHVjdC9pbWFnZS8zMzA3MTEwZmZmNmViZWJmZTJkZWQxZDgyZmYwZDgyMC5wbmciLCAiZWRpdHMiOiB7InJvdGF0ZSI6IG51bGwsICJyZXNpemUiOiB7IndpZHRoIjogNzUwLCAiaGVpZ2h0IjogNzUwLCAiZml0IjogImluc2lkZSIsICJiYWNrZ3JvdW5kIjogeyJyIjogMSwgImciOiAxLCAiYiI6IDEsICJhbHBoYSI6IDB9LCAid2l0aG91dEVubGFyZ2VtZW50IjogdHJ1ZX19LCAiZXh0ZW5kIjoge319" id="fridgeImage"  width="593" height="550">
+
+<div id="buttonsContainer">
+
+<input type = "button" onclick ="openCloseFridge()" id="button2" value="Open Fridge" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 30px;  font-family: Cursive; margin-right: 28px;">
+
+<input type = "button" id="button3" value="36°F" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px; font-family: Cursive;margin-right: 20px;">
+
+<input type = "button" onclick ="openBrowser()" id="button4" value= "Open Browser" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 28px; font-family: Cursive;">>
+<p>
+<input type = "button" onclick="watchTv()" id="button5" value="Watch TV! ♡ " style="width: 400px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px; font-family: Cursive; margin-left: 125px;">>
+
+</div>
+</p>
+</div>
+
+
+</div>
+<p>
+<div id="div2">
+
+<input type = "button" onclick = "button1()" id="button1" value="♡ON♡" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 50px; font-family: Cursive;">
+
+</div>
+
+<body onload ="doStartClock();">
+	<span id="timePar" style ="font-size:6em;font-family:'Courier New', Courier, monospace; margin-left: 350px;"
+	">00:00:00</span>
+
+</div>
+
+<div id="div3" style="text-align: center;">
+<p><br>
+<p><br>
+<p>
+
+<img src="https://i.ytimg.com/vi/_y0VXa7UBz0/maxresdefault.jpg" id="searchEngine"  width="700" height="400" style="margin-left: 125px;">
+
+<img src="https://www.groovypost.com/wp-content/uploads/2018/10/Hulu-Kids-Profile-Apple-TV.jpg" id="streaming" width="700" height="400"style ="margin-left: 125px; display: none;">
+
+
+</div>
+
+</body>
+
+
+<script>
+var buttonsContainer = document.getElementById("buttonsContainer");
+
+function button1(){
+	var button1= document.getElementById("button1");
+	if (button1.value ==="♡ON♡"){
+		button1.value = "♡OFF♡";
+		buttonsContainer.style.display = "none";
+	} else{
+		button1.value = "♡ON♡";
+		buttonsContainer.style.display = "block";
+	}
+}
+
+function displayScreen(){
+
+}
+var fridgeOpen = false;
+
+function openCloseFridge(){
+	var fridgeImage = document.getElementById("fridgeImage");
+	var button2 = document.getElementById("button2");
+
+	if (fridgeOpen) {
+	fridgeImage.src = "https://image.influenster.com/eyJidWNrZXQiOiAiaW5mbHVlbnN0ZXJfcHJvZHVjdGlvbiIsICJrZXkiOiAibWVkaWEvcHJvZHVjdC9pbWFnZS8zMzA3MTEwZmZmNmViZWJmZTJkZWQxZDgyZmYwZDgyMC5wbmciLCAiZWRpdHMiOiB7InJvdGF0ZSI6IG51bGwsICJyZXNpemUiOiB7IndpZHRoIjogNzUwLCAiaGVpZ2h0IjogNzUwLCAiZml0IjogImluc2lkZSIsICJiYWNrZ3JvdW5kIjogeyJyIjogMSwgImciOiAxLCAiYiI6IDEsICJhbHBoYSI6IDB9LCAid2l0aG91dEVubGFyZ2VtZW50IjogdHJ1ZX19LCAiZXh0ZW5kIjoge319";
+	button2.value = "Open Fridge"; }
+	else {
+	fridgeImage.src = "https://m.media-amazon.com/images/I/81dnnxGb2XL._AC_UF894,1000_QL80_.jpg";
+	button2.value ="Close Fridge"; }
+	
+	fridgeOpen = !fridgeOpen;
+}
+
+function doStartClock() {
+		setInterval(doClockTick, 1000);
+	}
+	
+	function doClockTick() {
+		var currentDate= new Date();
+		var hours = currentDate.getHours();
+		var mins = currentDate.getMinutes();
+		var secs = currentDate.getSeconds();
+		var timeString = hours+":"+mins+":"+secs;
+
+		var outputElement = document.getElementById("timePar");
+		outputElement.textContent=timeString;
+	}
+	
+	function openBrowser() {
+		var searchEngine = document.getElementById("searchEngine");
+		var button4 =document.getElementById("button4");
+
+		if (searchEngine.style.display === "none" || searchEngine.style.display === "") {
+		searchEngine.style.display = "block";
+		button4.value = "Close Browser";
+	} else {
+	searchEngine.style.display = "none";
+	button4.value = "Open Browser";
+	}
+}
+
+function watchTv() {
+	var streamingImage = document.getElementById("streaming");
+
+	if (streamingImage.style.display === "none" || streamingImage.style.display === "") {
+	streamingImage.style.display = "block";
+	} else {
+		streamingImage.style.display = "none";
+	}
+}
+
+</script>
+
+</html>
