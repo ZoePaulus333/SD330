@@ -8,110 +8,215 @@
             color: white;
             font-family: Arial, sans-serif;
         }
-
 	
-	.floatRight {
-            float: right; width: 40%; border: 5px solid white; background-color: white;
-       }
-
-	input[type="button"] {
-		margin: 0;
-		padding: 0;
-		vertical-align: top;
+	audio::-webkit-media-controls-panel {
+		color: black;
+}
+	
+	.fridge-container {
+		border: 2px solid white;
+		width: 1500px;
+		height: 800px;
+		padding: 20px;
+		background-color: #fff;
+		text-align:center;
+		margin: 50px;
+		position: relative;
 	}
+	.image-hidden {
+		display: none;
+	}
+	#fridgeImage {
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: 200px;
+		left: 0px;
+	}
+	#button1, #button2 {
+		position: absolute;
+		top: 10px;
+		font-size: 50px;
+		font-family: cursive;
+}
+	#buttonPlus, #buttonMinus {
+		position: absolute;
+		top: 40px;
+		font-size: 50px;
+		font-family: cursive;
+}
+	#button1 {
+		left: 10px;
+}
+	#button2 {
+		left: 220px;
+}
+	#buttonPlus {
+		left: 408px;
+}
+	#buttonMinus {
+		left: 465px;
+}
+	#button3, #button4, #button5 {
+		position: absolute;
+		top: 720px;
+		font-size: 40px;
+		font-family: Cursive;
+}
+	#button3 {
+		left: 10px;
+}
 
-	#searchEngine{
-	display: none;
-	margin-left: 50px;
+	#button4 {
+		left: 95px;
+}
+	#button5 {
+		left: 430px;
+}
+	#timer {
+		margin-top: 400px;
+	
+}
+	#sunImage {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 10px;
+		left: 1400px;
+}
+	#musicImage {
+		position: absolute;
+		top: 10px;
+		left: 1200px;
+}
+
+	#musicAudio {
+		position: fixed;
+		top: 180px;
+		right: 125px;
 }
 </style>
 </head>
 
 <body>
+	<div class="fridge-container">
 
-<div id="group1" class= "floatRight">
+<input type = "button" id="button1" value="♡ON♡" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 50px; font-family: Cursive;">
 
-	<div id="div1">
+		<img src="https://image.influenster.com/eyJidWNrZXQiOiAiaW5mbHVlbnN0ZXJfcHJvZHVjdGlvbiIsICJrZXkiOiAibWVkaWEvcHJvZHVjdC9pbWFnZS8zMzA3MTEwZmZmNmViZWJmZTJkZWQxZDgyZmYwZDgyMC5wbmciLCAiZWRpdHMiOiB7InJvdGF0ZSI6IG51bGwsICJyZXNpemUiOiB7IndpZHRoIjogNzUwLCAiaGVpZ2h0IjogNzUwLCAiZml0IjogImluc2lkZSIsICJiYWNrZ3JvdW5kIjogeyJyIjogMSwgImciOiAxLCAiYiI6IDEsICJhbHBoYSI6IDB9LCAid2l0aG91dEVubGFyZ2VtZW50IjogdHJ1ZX19LCAiZXh0ZW5kIjoge319" id="fridgeImage" >
 
-	<p>
+<input type = "button" id="button2" value="36°F" style="width: 180px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px; font-family: Cursive;" onclick="toggleTemperatureUnit()">
 
-		<img src="https://image.influenster.com/eyJidWNrZXQiOiAiaW5mbHVlbnN0ZXJfcHJvZHVjdGlvbiIsICJrZXkiOiAibWVkaWEvcHJvZHVjdC9pbWFnZS8zMzA3MTEwZmZmNmViZWJmZTJkZWQxZDgyZmYwZDgyMC5wbmciLCAiZWRpdHMiOiB7InJvdGF0ZSI6IG51bGwsICJyZXNpemUiOiB7IndpZHRoIjogNzUwLCAiaGVpZ2h0IjogNzUwLCAiZml0IjogImluc2lkZSIsICJiYWNrZ3JvdW5kIjogeyJyIjogMSwgImciOiAxLCAiYiI6IDEsICJhbHBoYSI6IDB9LCAid2l0aG91dEVubGFyZ2VtZW50IjogdHJ1ZX19LCAiZXh0ZW5kIjoge319" id="fridgeImage"  width="593" height="550">
+<span id="button2Display">36°F</span>
 
-<div id="buttonsContainer">
+<input type = "button" id="buttonPlus" value="+" style="width:50px; height:50px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px;" onclick="addNumber()">
 
-<input type = "button" onclick ="openCloseFridge()" id="button2" value="Open Fridge" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 30px;  font-family: Cursive; margin-right: 28px;">
+<input type = "button" id="buttonMinus" value="-" style="width:50px; height:50px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px;" onclick="subtractNumber()">
 
-<input type = "button" id="button3" value="36°F" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px; font-family: Cursive;margin-right: 20px;">
+<input type = "button"  id="button3" value= "Open Browser" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 28px; font-family: Cursive;">
 
-<input type = "button" onclick ="openBrowser()" id="button4" value= "Open Browser" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 28px; font-family: Cursive;">>
-<p>
-<input type = "button" onclick="watchTv()" id="button5" value="Watch TV! ♡ " style="width: 400px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 40px; font-family: Cursive; margin-left: 125px;">>
+<input type = "button" id="button4" value="Watch TV! ♡ " style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 30px; font-family: Cursive; margin-left: 125px;">
 
-</div>
-</p>
-</div>
-
-
-</div>
-<p>
-<div id="div2">
-
-<input type = "button" onclick = "button1()" id="button1" value="♡ON♡" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 50px; font-family: Cursive;">
-
-</div>
+<input type = "button" id="button5" value="Toggle View" style="width: 200px; height: 100px; background-color: #f75e9b; color: white; border: 2px solid white; font-size: 30px;  font-family: Cursive; margin-right: 28px;">
 
 <body onload ="doStartClock();">
-	<span id="timePar" style ="font-size:6em;font-family:'Courier New', Courier, monospace; margin-left: 350px;"
+	<span id="timePar" style ="font-size:6em;font-family:'Courier New', Courier, monospace; margin-left: 100px;color:#f75e9b; cursor: pointer;"
 	">00:00:00</span>
 
+<div id="shoppingList" style="color: #f75e9b; position: absolute; right: 620px; top: 200px; width: 300px;">
+	<h2>Shopping List</h2>
+	<ol id="shoppingItems">
+		<li>Pancake Mix</li>
+		<li>Chocolate</li>
+		<li>Sprinkles</li>
+		<li>Cat food</li>
+		<li>Grapes</li>
+	</ol>
+	<input type="text" id="newItem" placeholder="Add a new item">
+	<input type="button" value="Add" onclick="addItem()">
+	</div>
+
+<div id="timer" style="font-size: 2em; color: #f75e9b;"></div>
+	<input type = "button" id="startTimer" value="Start Timer" onclick="startTimer()">
+	<input type = "button" id="pauseTimer" value="Pause Timer" onclick="pauseTimer()">
+	<input type = "button" id="resetTimer" value="Reset Timer" onclick="resetTimer()">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsd3O4pEybJ6ae3pEt3u2nfAXMlESiUVJGUi0ci-rXJ1CC7MlUJw98hkZfRDihlHKJFXc&usqp=CAU" id="sunImage">
+
+<img src="C:\Users\zoepa\OneDrive\Desktop\System design\musicImage.png" id="musicImage" width="100" height="100";>
+
+<div id ="imageWindow" style="position: absolute; top: 200px; right: 20px; width: 450px; height: 600px; background-color: #FDBAD4;">
+
+<img src="C:\Users\zoepa\OneDrive\Desktop\System design\TvImage.jpg" id="TvImage" width="450" height="300" class="image-hidden";>
+
+
+<img src="https://i.ytimg.com/vi/_y0VXa7UBz0/maxresdefault.jpg" id="searchEngine" width="450" height="300" class="image-hidden";>
 </div>
 
-<div id="div3" style="text-align: center;">
-<p><br>
-<p><br>
-<p>
-
-<img src="https://i.ytimg.com/vi/_y0VXa7UBz0/maxresdefault.jpg" id="searchEngine"  width="700" height="400" style="margin-left: 125px;">
-
-<img src="https://www.groovypost.com/wp-content/uploads/2018/10/Hulu-Kids-Profile-Apple-TV.jpg" id="streaming" width="700" height="400"style ="margin-left: 125px; display: none;">
-
-
+<audio id="musicAudio" preload="auto" src="C:\Users\zoepa\OneDrive\Desktop\System design\Music.mp3" controls></audio>
 </div>
 
-</body>
+<audio id="timerSound" preload = "auto" source src="C:\Users\zoepa\OneDrive\Desktop\System design\meow.mp3.mp3"></audio>
+
+<audio id="tvSound" preload = "auto"  src="C:\Users\zoepa\OneDrive\Desktop\System design\meow.mp3.mp3"></audio>
 
 
-<script>
-var buttonsContainer = document.getElementById("buttonsContainer");
 
-function button1(){
-	var button1= document.getElementById("button1");
-	if (button1.value ==="♡ON♡"){
-		button1.value = "♡OFF♡";
-		buttonsContainer.style.display = "none";
-	} else{
-		button1.value = "♡ON♡";
-		buttonsContainer.style.display = "block";
+<script defer>
+	let isFahrenheit = true;
+	let timerInterval;
+	let timerSeconds = 60;
+	let isCountingDown = false;
+
+	function startTimer() {
+		if (!isCountingDown) {
+		timerInterval = setInterval(updateTimer, 1000);
+		isCountingDown = true;
+		}
 	}
-}
-
-function displayScreen(){
-
-}
-var fridgeOpen = false;
-
-function openCloseFridge(){
-	var fridgeImage = document.getElementById("fridgeImage");
-	var button2 = document.getElementById("button2");
-
-	if (fridgeOpen) {
-	fridgeImage.src = "https://image.influenster.com/eyJidWNrZXQiOiAiaW5mbHVlbnN0ZXJfcHJvZHVjdGlvbiIsICJrZXkiOiAibWVkaWEvcHJvZHVjdC9pbWFnZS8zMzA3MTEwZmZmNmViZWJmZTJkZWQxZDgyZmYwZDgyMC5wbmciLCAiZWRpdHMiOiB7InJvdGF0ZSI6IG51bGwsICJyZXNpemUiOiB7IndpZHRoIjogNzUwLCAiaGVpZ2h0IjogNzUwLCAiZml0IjogImluc2lkZSIsICJiYWNrZ3JvdW5kIjogeyJyIjogMSwgImciOiAxLCAiYiI6IDEsICJhbHBoYSI6IDB9LCAid2l0aG91dEVubGFyZ2VtZW50IjogdHJ1ZX19LCAiZXh0ZW5kIjoge319";
-	button2.value = "Open Fridge"; }
-	else {
-	fridgeImage.src = "https://m.media-amazon.com/images/I/81dnnxGb2XL._AC_UF894,1000_QL80_.jpg";
-	button2.value ="Close Fridge"; }
 	
-	fridgeOpen = !fridgeOpen;
+	function pauseTimer() {
+		clearInterval(timerInterval);
+		isCountingDown = false; 
+	}
+	function resetTimer(){
+		timerSeconds = 60;
+		updateTimerDisplay();
+		isCountingDown = false;
+	}
+	function updateTimer() {
+		if (timerSeconds > 0) {
+		timerSeconds--;
+		updateTimerDisplay();
+		} else {
+		pauseTimer();
+		playTimerSound();
+		}
+	
+	}
+	function playTimerSound() {
+		const audio = document.getElementById("timerSound");
+		audio.play();
+}
+	function updateTimerDisplay() {
+		const minutes = Math.floor(timerSeconds / 60);
+		const seconds = timerSeconds % 60;
+		const formattedMinutes = minutes.toString().padStart(2, '0');
+		const formattedSeconds = seconds.toString().padStart(2, '0');
+		document.getElementById("timer").textContent = `${minutes}m ${seconds}s`;
+	}
+
+	function addItem() {
+		var newItemInput = document.getElementById("newItem");
+		var newItemText = newItemInput.value;
+		
+		if (newItemText.trim() !== "") {
+			var shoppingItemsList = document.getElementById("shoppingItems");
+			var newItem = document.createElement("li");
+		newItem.textContent = newItemText;
+		shoppingItemsList.appendChild(newItem);
+		newItemInput.value = " ";
+	}
 }
 
 function doStartClock() {
@@ -123,35 +228,140 @@ function doStartClock() {
 		var hours = currentDate.getHours();
 		var mins = currentDate.getMinutes();
 		var secs = currentDate.getSeconds();
-		var timeString = hours+":"+mins+":"+secs;
+		var timeString;
+
+		if (is12HourFormat) {
+			var ampm = hours >=12 ?"PM" : "AM";
+			hours = hours % 12 || 12;
+			timeString = hours + ":" + mins + ":" + secs + ampm;
+		} else {
+		timeString = hours + ":" + mins + ":" + secs;
+}
 
 		var outputElement = document.getElementById("timePar");
 		outputElement.textContent=timeString;
 	}
-	
-	function openBrowser() {
-		var searchEngine = document.getElementById("searchEngine");
-		var button4 =document.getElementById("button4");
+let is12HourFormat = true;
 
-		if (searchEngine.style.display === "none" || searchEngine.style.display === "") {
-		searchEngine.style.display = "block";
-		button4.value = "Close Browser";
+function toggleClockFormat() {
+	is12HourFormat = !is12HourFormat;
+	updateClockFormat();
+}
+
+function updateClockFormat(){
+	const currentDate = new Date();
+	let hours = currentDate.getHours();
+	const mins = currentDate.getMinutes();
+	const secs = currentDate.getSeconds();
+	const ampm = hours >= 12 ? "PM" : "AM";
+
+if (is12HourFormat) {
+	hours = hours % 12 || 12; 
+}
+
+const timeString = is12HourFormat
+? `${hours}:${mins}:${secs}${ampm}`
+: `${hours}:${mins}:${secs}`;
+
+const outputElement = document.getElementById("timePar");
+outputElement.textContent = timeString;
+}
+document.getElementById("timePar").addEventListener("click", toggleClockFormat);
+
+document.getElementById("button5").addEventListener("click", toggleView);
+
+let isImageToggle = false;
+
+function toggleView() {
+	isImageToggle = !isImageToggle;
+	const fridgeImage = document.getElementById("fridgeImage");
+
+if (isImageToggle) {
+	fridgeImage.src = "https://image.influenster.com/eyJidWNrZXQiOiAiaW5mbHVlbnN0ZXJfcHJvZHVjdGlvbiIsICJrZXkiOiAibWVkaWEvcHJvZHVjdC9pbWFnZS8zMzA3MTEwZmZmNmViZWJmZTJkZWQxZDgyZmYwZDgyMC5wbmciLCAiZWRpdHMiOiB7InJvdGF0ZSI6IG51bGwsICJyZXNpemUiOiB7IndpZHRoIjogNzUwLCAiaGVpZ2h0IjogNzUwLCAiZml0IjogImluc2lkZSIsICJiYWNrZ3JvdW5kIjogeyJyIjogMSwgImciOiAxLCAiYiI6IDEsICJhbHBoYSI6IDB9LCAid2l0aG91dEVubGFyZ2VtZW50IjogdHJ1ZX19LCAiZXh0ZW5kIjoge319";
+} else {
+	fridgeImage.src = "https://m.media-amazon.com/images/I/81dnnxGb2XL._AC_UF894,1000_QL80_.jpg";
+}
+}
+
+let currentNumber = 36; 
+
+function updateButton2Display(action) {
+	if (action === 'add') {
+		currentNumber++;
+	} else if (action === 'subtract') {
+		currentNumber--;
+}
+	const button2 = document.getElementById("button2");
+	button2.value = currentNumber + "°F";
+}
+
+function addNumber() {
+	updateButton2Display('add');
+}
+
+function subtractNumber() {
+	updateButton2Display('subtract');
+}
+
+function toggleTemperatureUnit() {
+	isFahrenheit = !isFahrenheit;
+	const button2 = document.getElementById("button2");
+
+	if (isFahrenheit) {
+		button2.value = currentNumber + "°F";
 	} else {
-	searchEngine.style.display = "none";
-	button4.value = "Open Browser";
+		const celsiusValue = ((currentNumber - 32) *5) /9;
+		button2.value = celsiusValue.toFixed(1) + "°C";
+}
+}
+
+let isSearchEngineVisible = false;
+let isTvImageVisible = false;
+
+document.getElementById("button3").addEventListener("click", toggleSearchEngine);
+document.getElementById("button4").addEventListener("click", toggleTvImage);
+
+function toggleSearchEngine(){
+	const searchEngineImage = document.getElementById("searchEngine");
+	isSearchEngineVisible = !isSearchEngineVisible;
+
+if (isSearchEngineVisible) {
+	searchEngineImage.classList.remove("image-hidden");
+} else {
+	searchEngineImage.classList.add("image-hidden");
 	}
 }
 
-function watchTv() {
-	var streamingImage = document.getElementById("streaming");
+function toggleTvImage(){
+	const tvImage = document.getElementById("TvImage");
+	isTvImageVisible = !isTvImageVisible;
 
-	if (streamingImage.style.display === "none" || streamingImage.style.display === "") {
-	streamingImage.style.display = "block";
-	} else {
-		streamingImage.style.display = "none";
+if (isTvImageVisible){
+	tvImage.classList.remove("image-hidden");
+	playTvSound();
+}else{
+	tvImage.classList.add("image-hidden");
+	pauseTvSound();
 	}
+}
+
+function playTvSound() {
+	const audio = document.getElementById ("tvSound");
+	audio.play();
+}
+function pauseTvSound(){
+	const audio = document.getElementById("tvSound");
+	audio.pause();
+}
+
+document.getElementById("musicImage").addEventListener("click", playMusic);
+
+function playMusic() {
+	const audio = document.getElementById("musicAudio");
+	audio.play();
 }
 
 </script>
+</body>
 
 </html>
