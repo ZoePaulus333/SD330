@@ -65,7 +65,7 @@
 	"credits": "3",
 	"courseID": "888"
 	}
-],
+	],
 
 	"books": [
 	{
@@ -179,7 +179,7 @@
 		"author": "Dolly",
 		"isbn": "12345678916",
 		"courseID": "777"
-},
+	},
 	{
 		"id": 17,
 		"title": "the Individual Impact",
@@ -187,8 +187,8 @@
 		"isbn": "12345678917",
 		"courseID": "777"
 	}
-]
-},
+	]
+	},
 	{
 		"id": 18,
 		"title": "Proper Pets",
@@ -196,8 +196,8 @@
 		"isbn": "12345678918",
 		"courseID": "888"
 	}
-]
-},
+	]
+	},
 	{
 		"id": 19,
 		"title": "DON't OVERFEED",
@@ -205,5 +205,5 @@
 		"isbn": "12345678919",
 		"courseID": "888"
 	}
-]
-}
+	]
+	}
