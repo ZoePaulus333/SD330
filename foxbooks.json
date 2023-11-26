@@ -1,0 +1,209 @@
+{
+	"courses": [
+	{
+
+	"id": 1,
+	"title": "Cooking",
+	"semester": "first",
+	"professor": "Fluffabelle II",
+	"credits": "3",
+	"courseID": "111",
+	},
+	{
+	"id": 2,
+	"title": "Homemaking",
+	"semester": "first",
+	"professor": "Princess Powder",
+	"credits": "3",
+	"courseID": "222",
+	},
+	{
+	"id": 3,
+	"title": "Dancing",
+	"semester": "first",
+	"professor": "Pizazz",
+	"credits": "3",
+	"courseID": "333"
+	},
+	{
+	"id": 4,
+	"title": "Arts and Crafts",
+	"semester": "second",
+	"professor": "Pickles",
+	"credits": "3",
+	"courseID": "444"
+	},
+	{
+	"id": 5,
+	"title": "Music",
+	"semester": "second",
+	"professor": "Fluttershy",
+	"credits": "3",
+	"courseID": "555"
+	},
+	{
+	"id": 6,
+	"title": "Problem Solving",
+	"semester": "second",
+	"professor": "Jelly",
+	"credits": "4",
+	"courseID": "666"
+	},
+	{
+	"id": 7,
+	"title": "Environmental Science",
+	"semester": "second",
+	"professor": "Nugget",
+	"credits": "4",
+	"courseID": "777"
+	},
+	{
+	"id": 8,
+	"title": "Animal Care",
+	"semester": "second",
+	"professor": "Sparkles",
+	"credits": "3",
+	"courseID": "888"
+	}
+],
+
+	"books": [
+	{
+		"id": 1,
+		"title": "Fluffy Desserts",
+		"author": "Fluffabelle",
+		"isbn": "1234567891",
+		"courseID": "111"
+	},
+	{
+		"id": 2,
+		"title": "Pancake Mastery",
+		"author": "Mr. Squiggles",
+		"isbn": "1234567892",
+		"courseID": "111"
+	},
+	{
+		"id": 3,
+		"title": "Sewing Sparkles",
+		"author": "Sweetie",
+		"isbn": "1234567893",
+		"courseID": "222"
+	},
+	{
+		"id": 4,
+		"title": "Cleaning for Dummies",
+		"author": "Patches",
+		"isbn": "1234567894",
+		"courseID": "222"
+	},
+	{
+		"id": 5,
+		"title": "When in Doubt, Pink it Out!",
+		"author": "Num Nums",
+		"isbn": "1234567895",
+		"courseID": "222"
+	},
+	{
+		"id": 6,
+		"title": "Shakey Shakey",
+		"author": "Kirby",
+		"isbn": "1234567896",
+		"courseID": "333"
+	},
+	{
+		"id": 7,
+		"title": "Two Left Feet",
+		"author": "Peachy",
+		"isbn": "1234567897",
+		"courseID": "333"
+	},
+	{
+		"id": 8,
+		"title": "DON'T RUN WITH SCISSORS",
+		"author": "Nelly",
+		"isbn": "1234567898",
+		"courseID": "444"
+	},
+	{
+		"id": 9,
+		"title": "Painting for Beginners",
+		"author": "Boba",
+		"isbn": "1234567899",
+		"courseID": "444"
+	},
+	{
+		"id": 10,
+		"title": "Get Creative!",
+		"author": "Pickles",
+		"isbn": "12345678910",
+		"courseID": "444"
+	},
+	{
+		"id": 11,
+		"title": "An Introduction to Sight-Reading",
+		"author": "Pinkie",
+		"isbn": "12345678911",
+		"courseID": "555"
+	},
+	{
+		"id": 12,
+		"title": "Music for the Soul",
+		"author": "Bamboo",
+		"isbn": "12345678912",
+		"courseID": "555"
+	},
+	{
+		"id": 13,
+		"title": "Simple Puzzles",
+		"author": "Chunk",
+		"isbn": "12345678913",
+		"courseID": "666"
+	},
+	{
+		"id": 14,
+		"title": "Ethical Dilemmas",
+		"author": "Yo-Yo",
+		"isbn": "12345678914",
+		"courseID": "666"
+	},
+	{
+		"id": 15,
+		"title": "Question EVERYTHING",
+		"author": "Moo",
+		"isbn": "12345678915",
+		"courseID": "666"
+	},
+	{
+		"id": 16,
+		"title": "Environmental Justice",
+		"author": "Dolly",
+		"isbn": "12345678916",
+		"courseID": "777"
+},
+	{
+		"id": 17,
+		"title": "the Individual Impact",
+		"author": "Cinna",
+		"isbn": "12345678917",
+		"courseID": "777"
+	}
+]
+},
+	{
+		"id": 18,
+		"title": "Proper Pets",
+		"author": "Mr. Moo Moo",
+		"isbn": "12345678918",
+		"courseID": "888"
+	}
+]
+},
+	{
+		"id": 19,
+		"title": "DON't OVERFEED",
+		"author": "Swirly",
+		"isbn": "12345678919",
+		"courseID": "888"
+	}
+]
+}
