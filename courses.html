@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Home - Fox Books </title>
+	<Meta charset = "UTF-8">
+
+    <style>
+        body {  background-color: #FFCCF2;
+            color: white;
+            font-family: Arial, sans-serif;
+		margin: 0;
+        }
+	.navbar {
+		background-color: #f75e9b;
+}
+	.navbar ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+}
+	.navbar li {
+		float: left;
+}
+	.navbar a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 28px;
+}
+	.navbar a:hover {
+		background-color: #ff1493;
+}
+
+	h1 {
+		text-align: center;
+		color: #f75e9b;
+		font-size: 40px;
+		margin-top: 0;
+}
+	h2 { 
+	color: #f75e9b;
+	font-size: 100px;
+	text-align: center;
+	margin-top: 0;
+}
+	h3 {
+		font-size: 30px;
+}
+
+	a {
+		color: #f75e9b;
+}
+	#breadcrumb-container {
+		margin: 10px -;
+		font-size: 16px;
+}
+
+	#courses-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-left: 20px;
+		}
+	.course-column {
+		flex: 1;
+		margin: 10px;
+		}
+	.books-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		}
+	.books-list-item {
+		margin-bottom: 5px;
+		}
+	.course-link {
+		margin: 10px 0;
+		font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class ="navbar">
+	<ul>
+		<li><a href="foxbooks.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="courses.html">Courses</a></li>
+		<li><a href="about.html">Contact</a></li>
+	</ul>
+</nav>
+
+<div id="breadcrumb-container">
+	<a href="foxbooks.html">Home ></a> <a href="courses.html">Courses</a>
+</div>
+
+<h1>Fox Books</h1>
+<h2>Courses</h2>
+
+<h3>Class List</h3>
+
+<div id="courses-container"></div>
+
+
+<footer>
+<hr>
+<small> &copy; Zoe Paulus, November 13, 2023 </small>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+fetch('https://zoepaulus333.github.io/SD330/foxbooks.json')
+	.then(response => response.json())
+	.then(data => {	
+		const coursesContainer = document.getElementById('courses-container');
+
+	data.courses.forEach(course => {
+		const courseLink = document.createElement('a');
+	courseLink.href = `class${course.courseID}.html`;
+		courseLink.innerHTML = `<h2 class="course-link">${course.title}</h2>`;
+		coursesContainer.appendChild(courseLink);
+	});
+})
+	.catch(error => console.error('Error fetching data:', error));
+});
+
+
+</script>
+</body>
+</html>

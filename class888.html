@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Home - Fox Books </title>
+	<Meta charset = "UTF-8">
+
+    <style>
+        body {  background-color: #FFCCF2;
+            color: white;
+            font-family: Arial, sans-serif;
+		margin: 0;
+        }
+	.navbar {
+		background-color: #f75e9b;
+}
+	.navbar ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+}
+	.navbar li {
+		float: left;
+}
+	.navbar a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 28px;
+}
+	.navbar a:hover {
+		background-color: #ff1493;
+}
+
+	h1 {
+		text-align: center;
+		color: #f75e9b;
+		font-size: 100px;
+}
+	h3 { 
+	color: #f75e9b;
+}
+	h2 { 
+	color: #f75e9b;
+	font-size: 40px;
+	margin-left: 20px;
+}
+	#breadcrumb-container {
+		margin: 10px -;
+		font-size: 16px;
+}
+
+	a {
+		color: #f75e9b;
+}
+	.class-info {
+		text-align: left;
+		margin-top: 20px;
+		margin-left: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class ="navbar">
+	<ul>
+		<li><a href="foxbooks.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="courses.html">Courses</a></li>
+		<li><a href="about.html">Contact</a></li>
+	</ul>
+</nav>
+<div id="breadcrumb-container">
+	<a href="foxbooks.html">Home ></a> <a href="courses.html">Courses ></a> <a href="class888.html">Animal Care</a>
+</div>
+
+<h1>Fox Books</h1>
+<h2>Animal Care</h2>
+
+<div class="class-info" id="class-info-container"></div>
+
+
+<footer>
+<hr>
+<small> &copy; Zoe Paulus, November 13, 2023 </small>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('https://zoepaulus333.github.io/SD330/foxbooks.json')
+    .then(response => response.json())
+    .then(data => {
+        const classInfoContainer = document.getElementById('class-info-container');
+
+        const animalCareClass = data.courses.find(course => course.courseID === "888");
+
+        classInfoContainer.innerHTML = `
+            <h3>Class Information</h3>
+            <p><strong>Course ID:</strong>${animalCareClass["courseID"]}</p>
+            <p><strong>Professor:</strong> ${animalCareClass["professor"]}</p>
+            <p><strong>Semester:</strong> ${animalCareClass["semester"]}</p>
+            <p><strong>Credits:</strong> ${animalCareClass["credits"]}</p>
+        `;
+
+        const books = data.books.filter(book => book.courseID === "888");
+
+        if (books.length > 0) {
+            classInfoContainer.innerHTML += '<h3>Book Information</h3>';
+            books.forEach(book => {
+                classInfoContainer.innerHTML += `
+                    <div>
+                        <p><strong>Title:</strong> ${book.title}</p>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>ISBN:</strong> ${book.isbn}</p>
+                    </div>
+                    <hr>
+                `;
+            });
+        } else {
+            classInfoContainer.innerHTML += '<p>No books found for this course.</p>';
+        }
+    })
+    .catch(error => console.error('Error fetching data:', error));
+});
+
+	
+
+</script>
+</body>
+</html>
