@@ -7,7 +7,7 @@
 	"semester": "first",
 	"professor": "Fluffabelle II",
 	"credits": "3",
-	"courseID": "111",
+	"courseID": "111"
 	},
 	{
 	"id": 2,
@@ -15,7 +15,7 @@
 	"semester": "first",
 	"professor": "Princess Powder",
 	"credits": "3",
-	"courseID": "222",
+	"courseID": "222"
 	},
 	{
 	"id": 3,
@@ -65,7 +65,7 @@
 	"credits": "3",
 	"courseID": "888"
 	}
-	],
+	]
 
 	"books": [
 	{
@@ -182,7 +182,7 @@
 	},
 	{
 		"id": 17,
-		"title": "the Individual Impact",
+		"title": "The Individual Impact",
 		"author": "Cinna",
 		"isbn": "12345678917",
 		"courseID": "777"
@@ -196,7 +196,7 @@
 	},
 	{
 		"id": 19,
-		"title": "DON't OVERFEED",
+		"title": "Don't OVERFEED",
 		"author": "Swirly",
 		"isbn": "12345678919",
 		"courseID": "888"
